@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <Header />
-    <div v-if="error">
-      {{ error }}
-    </div>
-    <div v-else>
-      <div class="container">
+    <div class="container">
+      <div v-if="error">
+        <p class="log-warning">{{ error }}</p>
+      </div>
+      <div v-else>
         <ul class="reference-listing">
         <li class="reference__item">
             <a href="http://louanne-roger.fr/projet/wp-content/uploads/2021/07/Home-160121-scaled.jpg" class="reference__img-wrapper">
@@ -191,6 +191,58 @@ body {
   margin: auto;
 }
 
+.log {
+  border: 1px solid #403F56;
+  color: #403F56;
+  background-color: hsl(243, 15%, 95%);
+  border-radius: 4px;
+  padding: 8px 10px 8px 42px;
+  margin-top: 10px;
+  background-image: url("data:image/svg+xml,%3Csvg width='21' height='21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.002 0c5.523 0 10.001 4.478 10.001 10.002 0 5.523-4.478 10.001-10.001 10.001C4.478 20.003 0 15.525 0 10.002 0 4.478 4.478 0 10.002 0Zm-.004 8.25a1 1 0 0 0-.993.885l-.007.116.004 5.502.007.116a1 1 0 0 0 1.986 0l.007-.117-.004-5.502-.006-.117a1 1 0 0 0-.994-.882Zm.004-3.749a1.252 1.252 0 1 0 0 2.503 1.252 1.252 0 0 0 0-2.503Z' fill='%23403F56'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 10px 8px;
+  background-size: 22px;
+}
+
+.log-warning {
+  border: 1px solid hsl(43, 100%, 40%);
+  color: hsl(43, 100%, 40%);
+  background-color: #FFF8E6;
+  border-radius: 4px;
+  padding: 8px 10px 8px 42px;
+  margin-top: 10px;
+  background-image: url("data:image/svg+xml,%3Csvg width='26' height='25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24.767 21.134 14.243 1.171a1.956 1.956 0 0 0-3.48 0L.239 21.134c-.517.982-.157 2.206.804 2.734.287.158.607.24.934.241h21.05c1.091 0 1.976-.903 1.976-2.018 0-.334-.081-.663-.236-.957Zm-12.264-.115c-.682 0-1.235-.565-1.235-1.262 0-.697.553-1.261 1.235-1.261s1.235.565 1.235 1.261c0 .697-.553 1.262-1.235 1.262ZM13.844 8.33l-.354 7.695a.999.999 0 0 1-.988 1.01.999.999 0 0 1-.988-1.01l-.355-7.692c-.032-.756.541-1.396 1.282-1.43h.059c.742-.001 1.343.612 1.343 1.37l-.001.061.002-.004Z' fill='%23FDC947'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 10px 8px;
+  background-size: 22px;
+}
+
+.log-positif {
+  border: 1px solid #22977E;
+  color: #22977E;
+  background-color: hsl(167, 63%, 92%);
+  border-radius: 4px;
+  padding: 8px 10px 8px 42px;
+  margin-top: 10px;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1Zm4.768 9.14a1 1 0 1 0-1.536-1.28l-4.3 5.159-2.225-2.226a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.475-.067l5-6Z' fill='%2322977E'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 10px 8px;
+  background-size: 22px;
+}
+
+.log-negatif {
+  border: 1px solid #FF0033;
+  color: #FF0033;
+  background-color: hsl(348, 100%, 92%);
+  border-radius: 4px;
+  padding: 8px 10px 8px 42px;
+  margin-top: 10px;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.222 4.222c-4.296 4.296-4.296 11.26 0 15.556 4.296 4.296 11.26 4.296 15.556 0 4.296-4.296 4.296-11.26 0-15.556-4.296-4.296-11.26-4.296-15.556 0Zm11.314 9.9a1 1 0 1 1-1.415 1.414L12 13.414l-2.121 2.122a1 1 0 1 1-1.415-1.415L10.586 12 8.464 9.879A1 1 0 1 1 9.88 8.464L12 10.586l2.121-2.122a1 1 0 1 1 1.415 1.415L13.414 12l2.122 2.121Z' fill='%23F03'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h24v24H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 10px 7px;
+  background-size: 22px;
+}
+
 .reference-listing {
   display: flex;
   flex-wrap: wrap;
@@ -206,6 +258,14 @@ body {
   border-radius: 4px;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
+}
+
+@supports (backdrop-filter: blur(10px)) {
+	/* IF backdrop-filter IS SUPPORTED */
+	.reference__item {
+    background-color: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+	}
 }
 
 .reference__img-wrapper {
